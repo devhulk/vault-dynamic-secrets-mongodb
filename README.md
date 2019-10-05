@@ -1,3 +1,7 @@
+## Requirements 
+    - Docker
+    - Docker Compose
+
 ## Compose
 ```
 # bring up mongo, vault, and mongo-express

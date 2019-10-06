@@ -52,10 +52,13 @@ func (vault DynamicSecrets) GetCredentials() *Credential {
 		creds := VaultJSONResponse["data"].(map[string]interface{})
 		username := creds["username"].(string)
 		password := creds["password"].(string)
+		lease := VaultJSONResponse["lease_duration"]
+		renewable := VaultJSONResponse["renewable"]
+		leaseID := VaultJSONResponse["lease_id"]
 
 		color.Cyan(fmt.Sprintf("\nVault Request: %v [OK]  You have successfully authenticated with Vault and a MongoDB credential has been created and will last for %v seconds\n", resp.StatusCode, VaultJSONResponse["lease_duration"]))
 		fmt.Println("")
-		color.Cyan(fmt.Sprintf("\tUserName: %v\n\tPassword: %v", username, password))
+		color.Cyan(fmt.Sprintf("\tUserName: %v\n\tPassword: %v\n\tLeaseDuration: %v seconds\n\tRenewable: %v\n\tLeaseID: %v", username, password, lease, renewable, leaseID))
 		return &Credential{
 			Username: username,
 			Password: password,

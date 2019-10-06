@@ -61,16 +61,16 @@ func (repo Repo) Insert(client *mongo.Client, db string, collectionName string, 
 }
 
 // Read - Read my-collection and return the data
-func (repo Repo) Read(client *mongo.Client, db string, collectionName string) {
+func (repo Repo) Read(client *mongo.Client, db string, collectionName string, message *Message) {
 
 }
 
 // Update - Update a record in my-collection
-func (repo Repo) Update(client *mongo.Client, db string, collectionName string) {
+func (repo Repo) Update(client *mongo.Client, db string, collectionName string, message *Message) {
 
 }
 
 // Delete - Delete a record in my-collection
-func (repo Repo) Delete() {
+func (repo Repo) Delete(client *mongo.Client, db string, collectionName string, message *Message) {
 
 }

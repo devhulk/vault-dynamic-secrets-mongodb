@@ -1,5 +1,5 @@
 vault write database/roles/mongo-db-admin \
     db_name=gy-mongo-demo \
-    creation_statements='{ "db": "admin", "roles": [{ "role": "readWrite" }, {"role": "readWrite", "db": "dev"},{"role": "read", "db": "test"}, {"role": "read", "db": "production"}] }' \
+    creation_statements='{ "db": "admin", "roles": [{ "role": "readWrite" }, {"role": "readWrite", "db": "dev"},{"role": "readWrite", "db": "test"}, {"role": "read", "db": "production"}] }' \
     default_ttl="60s" \
     max_ttl="24h"

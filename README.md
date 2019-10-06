@@ -19,7 +19,7 @@ Because the volume is already enabled in the docker-compose file the log file wi
 docker exec -it vault-demo_vault_1 sh
 
 # run the following to enable the audit device
-vault audit enable file_path=/vault/logs/dynamic_credential_audit.log log_raw=true
+vault audit enable file file_path=/vault/logs/dynamic_credential_audit.log log_raw=true
 ```
 
 ## Enable DB Secret Engine
@@ -31,3 +31,11 @@ vault secrets enable database
 - configure mongodb role
 - create vault policy for client service (/logs/mongo-client.hcl)
 - create token for mongo-client (vault token create -policy=mongo-client)
+
+
+## Test Golang Client
+```
+go run .\main.go JwB0AGUAcwB0AF8AdABvAGsAZQBuACcA insert dev
+```
+
+

@@ -19,6 +19,15 @@ Because the volume is already enabled in the docker-compose file the log file wi
 docker exec -it vault-demo_vault_1 sh
 
 # run the following to enable the audit device
-vault audit enable file file_path=/var/log/#{YOUR_FILE_NAME}
+vault audit enable file_path=/vault/logs/dynamic_credential_audit.log log_raw=true
 ```
 
+## Enable DB Secret Engine
+```
+vault secrets enable database
+```
+
+- configure mongodb plugin
+- configure mongodb role
+- create vault policy for client service (/logs/mongo-client.hcl)
+- create token for mongo-client (vault token create -policy=mongo-client)

@@ -1,0 +1,6 @@
+vault write database/config/gy-mongo-demo \
+    plugin_name=mongodb-database-plugin \
+    allowed_roles="mongo-db-admin" \
+    connection_url="mongodb://{{username}}:{{password}}@mongo:27017/admin" \
+    username="mongo-admin" \
+    password="YWRtaW4tcHc="

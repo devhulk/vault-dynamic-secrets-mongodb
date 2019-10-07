@@ -55,7 +55,7 @@ func (repo Repo) Insert(client *mongo.Client, db string, collectionName string, 
 		os.Exit(2)
 	}
 
-	color.HiGreen(fmt.Sprintf("\nMongoDB Request: 200 [OK]\nInserted a single document: %v into %s database\n", insertResult.InsertedID, db))
+	color.Green(fmt.Sprintf("\nMongoDB Request: 200 [OK]\nInserted a single document: %v into %s database\n", insertResult.InsertedID, db))
 	fmt.Println("")
 
 }

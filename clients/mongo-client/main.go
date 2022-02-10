@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"os"
 
-	mongo "./db"
-	"./vault"
+	mongo "e.co/m/db"
+	"e.co/m/vault"
 	"github.com/fatih/color"
 )
 

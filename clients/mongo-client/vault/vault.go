@@ -34,7 +34,7 @@ func (vault DynamicSecrets) GetCredentials() *Credential {
 	req.Header.Add("X-Vault-Token", vault.Token)
 	resp, err := client.Do(req)
 	if err != nil {
-		fmt.Println(err)
+		log.Fatal(err)
 	}
 
 	defer resp.Body.Close()

@@ -42,6 +42,8 @@ services:
       - ./logs:/vault/logs
     networks:
       - vault-mongo-net
+    labels:
+      - sat.gcs.component=vault
 
 networks:
   vault-mongo-net:

@@ -8,7 +8,6 @@ import (
 
 	"github.com/fatih/color"
 	"go.mongodb.org/mongo-driver/mongo"
-	"go.mongodb.org/mongo-driver/mongo/options"
 )
 
 // Message - Test Struct
@@ -22,7 +21,7 @@ type Repo struct{}
 
 // Connect - Connect to MongoDB test db and return my-collection
 func (repo Repo) Connect(username string, password string) *mongo.Client {
-	mongoClientOptions := options.Client().ApplyURI(fmt.Sprintf("mongodb://%s:%s@localhost:27017", username, password))
+	mongoClientOptions := mongo.options.Client().ApplyURI(fmt.Sprintf("mongodb://%s:%s@localhost:27017", username, password))
 
 	mongoClient, err := mongo.Connect(context.TODO(), mongoClientOptions)
 

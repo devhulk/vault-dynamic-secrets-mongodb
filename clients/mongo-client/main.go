@@ -60,14 +60,14 @@ func main() {
 
 }
 
+// Repo - Database Operations
+type Repo struct{}
+
 // Message - Test Struct
 type Message struct {
 	Subject string
 	Content string
 }
-
-// Repo - Database Operations
-type Repo struct{}
 
 // Connect - Connect to MongoDB test db and return my-collection
 func (repo Repo) Connect(username string, password string) *mongo.Client {

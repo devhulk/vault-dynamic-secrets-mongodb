@@ -7,13 +7,13 @@ vault policy write mongodb-client /vault/logs/mongo-client.hcl
 vault token create -policy=mongodb-client
 
 vault secrets enable database
-
+    
 vault write database/config/gy-mongo-demo \
     plugin_name=mongodb-database-plugin \
     allowed_roles="mongo-db-admin" \
     connection_url="mongodb://{{username}}:{{password}}@mongo:27017/admin" \
     username="mongo-admin" \
-    password="YWRaW4tcHc="
+    password="YWRtaW4tcHc="
 
 vault write database/roles/mongo-db-admin \
     db_name=gy-mongo-demo \

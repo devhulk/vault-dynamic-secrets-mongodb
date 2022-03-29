@@ -15,7 +15,7 @@ docker-compose down
 
 You can visit mongo-express admin UI at localhost:8200
 
-## Enable Audit Device
+## Enable Audit Device (Initial Housekeeping So we can see logs)
 Because the volume is already enabled in the docker-compose file the log file will appear under the /logs directory after you run the following commands...
 ```
 # run the following to get a shell in the vault container

@@ -25,13 +25,6 @@ docker exec -it vault sh
 vault audit enable file file_path=/vault/logs/dynamic_credential_audit.log log_raw=true
 ```
 
-## Create Mongo Client Policy and Token
-```
-vault policy write mongodb-client /vault/logs/mongo-client.hcl
-
-vault token create -policy=mongodb-client
-```
-
 ## Enable DB Secret Engine
 ```
 vault secrets enable database
@@ -55,6 +48,13 @@ vault write database/roles/mongo-db-admin \
     creation_statements='{ "db": "admin", "roles": [{ "role": "readWrite" }, {"role": "readWrite", "db": "dev"},{"role": "readWrite", "db": "test"}, {"role": "read", "db": "production"}] }' \
     default_ttl="60s" \
     max_ttl="24h"
+```
+
+## Create Mongo Client Policy and Token
+```
+vault policy write mongodb-client /vault/logs/mongo-client.hcl
+
+vault token create -policy=mongodb-client
 ```
 
 
